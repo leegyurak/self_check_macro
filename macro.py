@@ -3,7 +3,13 @@ import time
 import schedule
 import random
 
-students_infos = []
+students_infos = [
+    ['이규락', '031030', '1030'], ['조현지', '030301', '0301'], ['곽준환', '031130', '2304'], ['박영훈', '030413', '1234'],
+    ['강다혁', '031207', '1234'], ['김근훈', '031111', '1234'], ['양준혁', '030724', '1234'], ['김영재', '030909', '5482'],
+    ['전지수', '030610', '6460'], ['양세연', '030506', '8478'], ['이문영', '030325', '1234'], ['김진혁', '030215', '1234'],
+    ['김경재', '030503', '1234'], ['이상윤', '030529', '1234'], ['신승현', '030704', '0853'], ['이준재', '030804', '2847'],
+    ['김동희', '030901', '6910'], ['양다희', '041122', '8478']
+]
 
 time_array = ['07:55', '08:00', '08:10', '08:15', '08:20', '08:25', '08:30', '08:35', '08:40', '08:45']
 
@@ -32,11 +38,11 @@ def macro () :
 
         region = webdriver.support.ui.Select(driver.find_element_by_xpath('//*[@id="sidolabel"]'))
 
-        if student_info[0] == '신승현' :
+        if student_info[0] == '' :
             region.select_by_value('16')
             time.sleep(1)
 
-        elif student_info[0] == '조예림' :
+        elif student_info[0] == '' :
             region.select_by_value('06')
             time.sleep(1)
 
@@ -48,18 +54,18 @@ def macro () :
         grade.select_by_value('4')
         time.sleep(1)
 
-        if student_info[0] == '신승현' :
-            for i in '의성고' :
+        if student_info[0] == '' :
+            for i in '' :
                 driver.find_element_by_xpath('//*[@id="orgname"]').send_keys(i)
                 time.sleep(0.2)
 
-        elif student_info[0] == '양다희' :
-            for i in '혜화여자' :
+        elif student_info[0] == '' :
+            for i in '' :
                 driver.find_element_by_xpath('//*[@id="orgname"]').send_keys(i)
                 time.sleep(0.2)
 
         else :
-            for i in '소프트' :
+            for i in '' :
                 driver.find_element_by_xpath('//*[@id="orgname"]').send_keys(i)
                 time.sleep(0.2)
 
